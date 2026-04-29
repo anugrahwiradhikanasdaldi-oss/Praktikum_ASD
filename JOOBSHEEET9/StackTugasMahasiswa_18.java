@@ -64,4 +64,7 @@ public String konversiDesimalKeBiner(int nilai) {
             }
         }
     }
+    public int count() {
+    return top + 1;
+    }
 }

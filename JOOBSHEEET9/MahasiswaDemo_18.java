@@ -59,6 +59,9 @@ public class MahasiswaDemo_18 {
                 case 5:
                     System.out.println("Keluar...");
                     break;
+                case 6:
+                System.out.println("Jumlah tugas terkumpul: " + stack.count ());
+                    break;
 
                 default:
                     System.out.println("Pilihan tidak valid!");

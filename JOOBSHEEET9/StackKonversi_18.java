@@ -33,4 +33,7 @@ public class StackKonversi_18 {
             return -1;
         }
     }
+    public int count() {
+    return top + 1;
+    }
 }
