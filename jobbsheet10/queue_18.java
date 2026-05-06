@@ -87,6 +87,13 @@ public class queue_18 {
         }
         return dt;
     }
+    public void tambahAntrian(Mahasiswa_18 mhs) {
+        if (IsFull()) {
+        System.out.println("Error: Queue Overflow! Program dihentikan.");
+        System.exit(0); 
+        } else {
+    }
+}
     public static void menu() {
         System.out.println("Pilih operasi:");
         System.out.println("1. Enqueue");
