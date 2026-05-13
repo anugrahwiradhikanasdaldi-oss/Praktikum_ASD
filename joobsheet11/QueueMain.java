@@ -1,11 +1,9 @@
 package joobsheet11;
 import java.util.Scanner;
-
 public class QueueMain {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         QueueMahasiswa q = new QueueMahasiswa();
-
         int pilih;
         do {
             System.out.println("\n1. Tambah Antrian");

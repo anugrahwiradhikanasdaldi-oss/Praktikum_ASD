@@ -1,33 +1,87 @@
 package joobsheet11;
+import java.util.Scanner;
+
 public class SLLMain18 {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         SingleLinkedList18 sll = new SingleLinkedList18();
 
-        Mahasiswa18 m1 = new Mahasiswa18("001", "Aulia", "TI-1A", 3.5);
-        Mahasiswa18 m2 = new Mahasiswa18("002", "Naufal", "TI-1A", 3.7);
-        Mahasiswa18 m3 = new Mahasiswa18("003", "Amalia", "TI-1A", 3.8);
-        Mahasiswa18 m4 = new Mahasiswa18("004", "Evan", "TI-1A", 3.6);
+        int pilihan;
+        do {
+            System.out.println("\n=== MENU LINKED LIST ===");
+            System.out.println("1. Tambah Data di Awal");
+            System.out.println("2. Tambah Data di Akhir");
+            System.out.println("3. Insert Setelah NIM");
+            System.out.println("4. Insert di Index");
+            System.out.println("5. Hapus Berdasarkan NIM");
+            System.out.println("6. Hapus Berdasarkan Index");
+            System.out.println("7. Tampilkan Data");
+            System.out.println("0. Keluar");
+            System.out.print("Pilih: ");
+            pilihan = sc.nextInt();
+            sc.nextLine();
 
-        sll.print();
+            switch (pilihan) {
 
-        sll.addFirst(m1);
-        sll.print();
+                case 1:
+                    Mahasiswa18 m1 = inputMahasiswa(sc);
+                    sll.addFirst(m1);
+                    break;
 
-        sll.addLast(m2);
-        sll.print();
+                case 2:
+                    Mahasiswa18 m2 = inputMahasiswa(sc);
+                    sll.addLast(m2);
+                    break;
 
-        sll.insertAfter("001", m3);
-        sll.print();
+                case 3:
+                    System.out.print("Masukkan NIM setelah data: ");
+                    String key = sc.nextLine();
+                    Mahasiswa18 m3 = inputMahasiswa(sc);
+                    sll.insertAfter(key, m3);
+                    break;
 
-        sll.insertAt(2, m4);
-        sll.print();
+                case 4:
+                    System.out.print("Masukkan index: ");
+                    int index = sc.nextInt();
+                    sc.nextLine();
+                    Mahasiswa18 m4 = inputMahasiswa(sc);
+                    sll.insertAt(index, m4);
+                    break;
 
-        System.out.println("Index NIM 003: " + sll.indexOf("003"));
+                case 5:
+                    System.out.print("Masukkan NIM yang dihapus: ");
+                    String nimHapus = sc.nextLine();
+                    sll.remove(nimHapus);
+                    break;
 
-        sll.remove("002");
-        sll.print();
+                case 6:
+                    System.out.print("Masukkan index yang dihapus: ");
+                    int idx = sc.nextInt();
+                    sll.removeAt(idx);
+                    break;
 
-        sll.removeAt(1);
-        sll.print();
+                case 7:
+                    sll.print();
+                    break;
+            }
+
+        } while (pilihan != 0);
+
+        System.out.println("Program selesai");
+    }
+
+    // METHOD INPUT DATA
+    public static Mahasiswa18 inputMahasiswa(Scanner sc) {
+        System.out.print("NIM   : ");
+        String nim = sc.nextLine();
+        System.out.print("Nama  : ");
+        String nama = sc.nextLine();
+        System.out.print("Kelas : ");
+        String kelas = sc.nextLine();
+        System.out.print("IPK   : ");
+        double ipk = sc.nextDouble();
+        sc.nextLine();
+
+        return new Mahasiswa18(nim, nama, kelas, ipk);
     }
 }

@@ -93,7 +93,6 @@ public class SingleLinkedList18 {
         }
         return temp.data;
     }
-
     public void removeFirst() {
         if (!isEmpty()) {
             head = head.next;
@@ -102,7 +101,6 @@ public class SingleLinkedList18 {
             }
         }
     }
-
     public void removeLast() {
         if (head == null) return;
 
