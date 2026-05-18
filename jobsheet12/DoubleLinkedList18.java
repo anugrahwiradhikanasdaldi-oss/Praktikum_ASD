@@ -72,16 +72,16 @@ public class DoubleLinkedList18 {
     }
     public void removeFirst() {
         if (isEmpty()) {
-            System.out.println("Linked List masih kosong.");
-            return;
-        }
-        if (head == tail) {
-            head = tail = null;
+        System.out.println("Linked List masih kosong, tidak ada data yang dihapus.");
+        } else if (head == tail) {
+        System.out.println("Data " + head.data.nama + " berhasil dihapus.");
+        head = tail = null;
         } else {
-            head = head.next;
-            head.prev = null;
+        System.out.println("Data " + head.data.nama + " berhasil dihapus.");
+        head = head.next;
+        head.prev = null;
         }
-    }
+}   
     public void removeLast() {
         if (isEmpty()) {
             System.out.println("Linked List masih kosong.");
